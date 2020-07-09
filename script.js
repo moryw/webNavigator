@@ -52,14 +52,15 @@ const backInfo = 'B|b for back page';
 const nextInfo = 'N|n for next page';
 const quitInfo = 'Q|q for quit';
 const question = 'Where would you like to go today? '
+const question2 = 'Where would you like to go next? '
 
 // ------------------------------
 let finish = true
 let showBack = false
 let showNext = false
 
-showCurrentPage('Start Page')
-newPage('Netflix')
+// showCurrentPage('Start Page')
+// newPage('Netflix')
 // newPage('Codecademy')
 // backPage()
 
@@ -76,15 +77,31 @@ while (finish) {
     instructions += `, ${nextInfo}`
   }
 
+
   instructions += `, ${quitInfo}`
-  console.log(instructions);
-  return
+  console.log(instructions)
+  // ------------------------------
+  let answer
+  if (backPages.isEmpty() && nextPages.isEmpty()) {
+    answer = prompt(question)
+  } else {
+    answer = prompt(question2)
+  }
+  let lowerCaseAnswer = answer.toLowerCase()
+  let formatedAnswer = answer[0].toUpperCase() + answer.slice(1)
+
+  if (lowerCaseAnswer === 'b') {
+    backPage()
+  } else if (lowerCaseAnswer === 'n') {
+    nextPage()
+  } else if (lowerCaseAnswer === 'q') {
+    console.log(`Thanks for playing`)
+    return
+  } else {
+    newPage(formatedAnswer)
+  }
+
 }
-
-  // ------------------------------
-  // User Interface Part 2
-  // ------------------------------
-
 
 
 
