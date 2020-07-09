@@ -54,8 +54,11 @@ const quitInfo = 'Q|q for quit';
 const question = 'Where would you like to go today? '
 
 // ------------------------------
-// User Interface Part 1
-// ------------------------------
+let finish = false
+let showBack = false
+let showNext = false
+
+showCurrentPage('Start Page')
 
   // ------------------------------
   // User Interface Part 2
