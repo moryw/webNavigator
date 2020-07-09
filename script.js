@@ -28,14 +28,22 @@ newPage = (page) => {
 
 backPage = () => {
   nextPages.push(currentPage)
-  currentPage = backPages.pop()
+  currentPage = backPages.pop() //don't know why this works
 
   showCurrentPage('Back')
+}
+
+nextPage = () => {
+  backPages.push(currentPage)
+  currentPage = nextPages.pop()
+
+  showCurrentPage('Forward')
 }
 
 // showCurrentPage('Nothing')
 newPage('Netflix')
 backPage()
+nextPage()
 /*
  * The following strings are used to prompt the user
  */
