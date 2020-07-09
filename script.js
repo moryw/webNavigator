@@ -1,8 +1,15 @@
 const Stack = require('./Stack.js');
 const prompt = require('prompt-sync')();
 // ------------------------------
-// Initialization
-// ------------------------------
+const backPages = new Stack()
+const nextPages = new Stack()
+
+try {
+  console.log(backPages.stack);
+  console.log(nextPages.stack);
+} catch (e) {
+  console.log(e);
+}
 
 // ------------------------------
 // Helper Functions
