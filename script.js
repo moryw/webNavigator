@@ -75,6 +75,7 @@ while (finish) {
 
   if (!nextPages.isEmpty()) {
     instructions += `, ${nextInfo}`
+
   }
 
 
@@ -91,9 +92,17 @@ while (finish) {
   let formatedAnswer = answer[0].toUpperCase() + answer.slice(1)
 
   if (lowerCaseAnswer === 'b') {
-    backPage()
+    if (!backPages.isEmpty()) {
+      backPage()
+    } else {
+      console.log('Sorry, there is no history for Back')
+    }
   } else if (lowerCaseAnswer === 'n') {
-    nextPage()
+    if (!nextPages.isEmpty()) {
+      nextPage()
+    } else {
+      console.log('Sorry, there is no history for Next')
+    }
   } else if (lowerCaseAnswer === 'q') {
     console.log(`Thanks for playing`)
     return
