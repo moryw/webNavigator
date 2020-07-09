@@ -27,11 +27,9 @@ showCurrentPage = (action) => {
 newPage = (page) => {
   backPages.push(currentPage)
   currentPage = page
-  if (!nextPages.isEmpty()) {
-    const size = nextPages.size
-    for (var i = 0; i < size; i++) {
-      nextPages.pop()
-    }
+
+  while (!nextPages.isEmpty()) {
+    nextPages.pop()
   }
 
   showCurrentPage('New Page')
