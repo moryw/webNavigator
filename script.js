@@ -41,9 +41,9 @@ nextPage = () => {
 }
 
 // showCurrentPage('Nothing')
-newPage('Netflix')
-backPage()
-nextPage()
+// newPage('Netflix')
+// backPage()
+// nextPage()
 /*
  * The following strings are used to prompt the user
  */
@@ -54,12 +54,62 @@ const quitInfo = 'Q|q for quit';
 const question = 'Where would you like to go today? '
 
 // ------------------------------
-let finish = false
+let finish = true
 let showBack = false
 let showNext = false
 
 showCurrentPage('Start Page')
+newPage('Netflix')
+// newPage('Codecademy')
+// backPage()
+
+while (finish) {
+  let instructions = baseInfo
+
+  if (!backPages.isEmpty()) {
+    instructions += `, ${backInfo}`
+
+    showBack = true
+  }
+
+  if (!nextPages.isEmpty()) {
+    instructions += `, ${nextInfo}`
+  }
+
+  instructions += `, ${quitInfo}`
+  console.log(instructions);
+  return
+}
 
   // ------------------------------
   // User Interface Part 2
   // ------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// end
