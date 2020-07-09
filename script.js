@@ -7,22 +7,13 @@ const nextPages = new Stack()
 
 let currentPage = 'Google';
 
-try {
-  console.log(backPages.stack);
-  console.log(nextPages.stack);
-} catch (e) {
-  console.log(e);
-}
-
 // ------------------------------
 showCurrentPage = (action) => {
-  console.log(`User chose ${action}`)
+  console.log(`User chose: ${action}`)
   console.log(`The current page is ${currentPage}`)
   console.log(`Back: ${backPages.peek()}`)
   console.log(`Forward: ${nextPages.peek()}`)
 }
-
-// showCurrentPage('Nothing')
 
 newPage = (page) => {
   backPages.push(currentPage)
@@ -35,8 +26,17 @@ newPage = (page) => {
   showCurrentPage('New Page')
 }
 
-newPage('Netflix')
+backPage = () => {
+  nextPages.push(currentPage)
+  currentPage = backPages.peek()
+  backPages.pop()
 
+  showCurrentPage('Back')
+}
+
+// showCurrentPage('Nothing')
+newPage('Netflix')
+backPage()
 /*
  * The following strings are used to prompt the user
  */
