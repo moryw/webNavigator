@@ -18,11 +18,26 @@ try {
 showCurrentPage = (action) => {
   console.log(`User chose ${action}`)
   console.log(`The current page is ${currentPage}`)
-  console.log(`The top element of backPages is: ${backPages.peek()}`)
-  console.log(`The top element of nextPages is: ${nextPages.peek()}`)
+  console.log(`Back: ${backPages.peek()}`)
+  console.log(`Forward: ${nextPages.peek()}`)
 }
 
-showCurrentPage('Nothing')
+// showCurrentPage('Nothing')
+
+newPage = (page) => {
+  backPages.push(currentPage)
+  currentPage = page
+  if (!nextPages.isEmpty()) {
+    const size = nextPages.size
+    for (var i = 0; i < size; i++) {
+      nextPages.pop()
+    }
+  }
+
+  showCurrentPage('New Page')
+}
+
+newPage('Netflix')
 
 /*
  * The following strings are used to prompt the user
