@@ -28,8 +28,7 @@ newPage = (page) => {
 
 backPage = () => {
   nextPages.push(currentPage)
-  currentPage = backPages.peek()
-  backPages.pop()
+  currentPage = backPages.pop()
 
   showCurrentPage('Back')
 }
