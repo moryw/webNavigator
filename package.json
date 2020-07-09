@@ -1,0 +1,23 @@
+{
+  "name": "webnavigator",
+  "version": "1.0.0",
+  "description": "A Web Navigator that simulates the navigational operations of a web browser using JS linear data structures",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moryw/webNavigator.git"
+  },
+  "author": "Mr.Mory",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moryw/webNavigator/issues"
+  },
+  "homepage": "https://github.com/moryw/webNavigator#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0",
+    "prompt-sync-history": "^1.0.1"
+  }
+}
